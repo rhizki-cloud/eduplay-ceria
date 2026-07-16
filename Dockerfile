@@ -1,29 +1,20 @@
-FROM php:8.3-apache
+FROM php:8.3-fpm-bookworm
 
-# Dukungan MySQL dan .htaccess
 RUN docker-php-ext-install pdo_mysql \
-    && a2enmod rewrite
-
-# Jalankan Apache pada port 8080
-RUN sed -ri 's!^Listen 80!Listen 8080!' /etc/apache2/ports.conf \
-    && sed -ri 's!<VirtualHost \*:80>!<VirtualHost *:8080>!' \
-       /etc/apache2/sites-available/000-default.conf
+    && apt-get update \
+    && apt-get install -y --no-install-recommends nginx supervisor \
+    && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /var/www/html
 
-COPY . /var/www/html/
+COPY . /var/www/html
+COPY docker/nginx.conf /etc/nginx/nginx.conf
+COPY docker/default.conf /etc/nginx/conf.d/default.conf
+COPY docker/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
-# Izinkan penggunaan .htaccess
-RUN printf '%s\n' \
-    '<Directory /var/www/html>' \
-    '    AllowOverride All' \
-    '    Options FollowSymLinks' \
-    '    Require all granted' \
-    '</Directory>' \
-    > /etc/apache2/conf-available/eduplay.conf \
-    && a2enconf eduplay \
+RUN mkdir -p /run/nginx /var/log/supervisor /var/www/html/uploads \
     && chown -R www-data:www-data /var/www/html
 
 EXPOSE 8080
 
-CMD ["apache2-foreground"]
+CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]

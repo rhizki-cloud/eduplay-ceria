@@ -1,0 +1,25 @@
+EDUPLAY CERIA - DEPLOY RAILWAY
+
+Paket ini memakai Nginx + PHP-FPM, bukan Apache, sehingga tidak terkena error:
+AH00534: More than one MPM loaded.
+
+1. Ekstrak seluruh isi ZIP langsung ke root repository GitHub.
+2. Commit dan push:
+   git add .
+   git commit -m "Use Nginx PHP-FPM on Railway"
+   git push
+3. Di Railway > service eduplay-ceria > Variables, isi:
+   PORT=8080
+   DB_HOST=tokaido.proxy.rlwy.net
+   DB_PORT=30097
+   DB_NAME=eduplay_ceria
+   DB_USER=root
+   DB_PASS=<MYSQLPASSWORD Railway>
+4. Settings > Deploy > Start Command harus kosong.
+5. Settings > Networking > domain target port = 8080.
+6. Redeploy commit terbaru.
+7. Buka https://domain-railway/login.php
+
+Catatan:
+- Jika service MySQL berada di project Railway yang sama, Anda dapat mengganti host/port dengan private networking.
+- Folder uploads pada container bersifat sementara. Gunakan object storage untuk penyimpanan permanen.
