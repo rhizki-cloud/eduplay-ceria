@@ -1,27 +1,33 @@
 FROM php:8.3-apache
 
-# Instal dukungan PDO MySQL
+# Instal PDO MySQL
 RUN docker-php-ext-install pdo_mysql
 
-# Aktifkan .htaccess dan mod_rewrite
-RUN a2enmod rewrite
+# Pastikan hanya mpm_prefork yang aktif
+RUN a2dismod mpm_event mpm_worker 2>/dev/null || true \
+    && rm -f /etc/apache2/mods-enabled/mpm_event.load \
+             /etc/apache2/mods-enabled/mpm_event.conf \
+             /etc/apache2/mods-enabled/mpm_worker.load \
+             /etc/apache2/mods-enabled/mpm_worker.conf \
+    && a2enmod mpm_prefork rewrite
 
 WORKDIR /var/www/html
 
-# Salin proyek
 COPY . /var/www/html/
 
-# Izinkan konfigurasi .htaccess
-RUN printf '<Directory /var/www/html>\n\
-    AllowOverride All\n\
-    Options FollowSymLinks\n\
-    Require all granted\n\
-</Directory>\n' \
+# Izinkan penggunaan .htaccess
+RUN printf '%s\n' \
+    '<Directory /var/www/html>' \
+    '    AllowOverride All' \
+    '    Options FollowSymLinks' \
+    '    Require all granted' \
+    '</Directory>' \
     > /etc/apache2/conf-available/eduplay.conf \
     && a2enconf eduplay \
-    && chown -R www-data:www-data /var/www/html
+    && chown -R www-data:www-data /var/www/html \
+    && apache2ctl configtest
 
 EXPOSE 8080
 
-# Railway memberikan port melalui variabel PORT
-CMD ["sh", "-c", "sed -i \"s/Listen 80/Listen ${PORT:-8080}/\" /etc/apache2/ports.conf && sed -i \"s/\\*:80/\\*:${PORT:-8080}/\" /etc/apache2/sites-available/000-default.conf && apache2-foreground"]
+# Sesuaikan Apache dengan port Railway
+CMD ["sh", "-c", "sed -ri \"s!Listen [0-9]+!Listen ${PORT:-8080}!\" /etc/apache2/ports.conf && sed -ri \"s!<VirtualHost \\*:[0-9]+>!<VirtualHost *:${PORT:-8080}>!\" /etc/apache2/sites-available/000-default.conf && exec apache2-foreground"]
