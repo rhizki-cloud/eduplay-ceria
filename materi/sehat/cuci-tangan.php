@@ -1,0 +1,4 @@
+<?php $pageTitle='Cuci Tangan';$activeNav='sehat';$showBack=true;$backUrl='materi/sehat/index.php';include __DIR__.'/../../includes/header.php';?>
+<div class="content-card"><h2>🧼 Enam Langkah Cuci Tangan</h2><ol><li>Basahi tangan dan gunakan sabun.</li><li>Gosok kedua telapak tangan.</li><li>Gosok punggung tangan bergantian.</li><li>Bersihkan sela-sela jari.</li><li>Bersihkan ujung jari, kuku, dan ibu jari.</li><li>Bilas lalu keringkan dengan tisu atau handuk bersih.</li></ol><p>Cuci tangan sebelum makan, setelah dari toilet, setelah bermain, dan setelah membuang sampah.</p></div>
+<div class="stack"><a class="big-btn blue" href="<?= e($backUrl) ?>">Kembali ke Daftar Materi</a></div>
+<?php include __DIR__.'/../../includes/footer.php';?>

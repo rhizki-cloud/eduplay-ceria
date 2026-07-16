@@ -1,0 +1,6 @@
+{
+  "name": "eduplay/ceria",
+  "description": "Aplikasi belajar anak berbasis PHP native",
+  "type": "project",
+  "require": {}
+}

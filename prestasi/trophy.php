@@ -1,0 +1,10 @@
+<?php $pageTitle='Lemari Piala';$pageKicker='Pencapaian Terbaikmu';$activeNav='prestasi';$showBack=true;$backUrl='prestasi/index.php';include __DIR__.'/../includes/header.php'; ?>
+<div class="content-card accent center"><div style="font-size:75px">🏆</div><h2 data-trophy-title>Piala Pertamamu Menunggu</h2><p class="muted" data-trophy-copy>Selesaikan permainan untuk mulai mengisi lemari piala.</p></div>
+<div class="section-head"><div><h2 class="section-title">Target Piala</h2><p class="section-subtitle">Piala ditentukan dari total aktivitas dan skor terbaik.</p></div></div>
+<div class="lesson-grid">
+ <div class="lesson-card" data-trophy="bronze"><span class="icon">🥉</span><strong>Piala Perunggu</strong><small>Selesaikan 3 aktivitas.</small></div>
+ <div class="lesson-card" data-trophy="silver"><span class="icon">🥈</span><strong>Piala Perak</strong><small>Selesaikan 8 aktivitas dan raih skor 70.</small></div>
+ <div class="lesson-card" data-trophy="gold"><span class="icon">🥇</span><strong>Piala Emas</strong><small>Selesaikan 15 aktivitas dan raih skor 90.</small></div>
+</div>
+<script>document.addEventListener('DOMContentLoaded',()=>{const s=window.eduplay.stats();let title='Piala Pertamamu Menunggu',copy='Selesaikan permainan untuk mulai mengisi lemari piala.';if(s.history.length>=3){document.querySelector('[data-trophy="bronze"]').classList.add('content-card');title='Piala Perunggu Terbuka!';copy='Kamu telah menyelesaikan sedikitnya 3 aktivitas.'}if(s.history.length>=8&&s.best>=70){document.querySelector('[data-trophy="silver"]').classList.add('content-card');title='Piala Perak Terbuka!';copy='Ketekunanmu mulai bersinar.'}if(s.history.length>=15&&s.best>=90){document.querySelector('[data-trophy="gold"]').classList.add('content-card');title='Piala Emas Terbuka!';copy='Luar biasa, kamu benar-benar penjelajah hebat.'}document.querySelector('[data-trophy-title]').textContent=title;document.querySelector('[data-trophy-copy]').textContent=copy})</script>
+<?php include __DIR__.'/../includes/footer.php'; ?>

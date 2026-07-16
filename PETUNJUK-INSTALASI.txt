@@ -1,0 +1,37 @@
+PETUNJUK INSTALASI EDUPLAY CERIA
+================================
+
+A. INSTALASI BARU
+1. Ekstrak folder EduPlay-Ceria ke C:\xampp\htdocs\
+2. Jalankan Apache dan MySQL pada XAMPP.
+3. Buka http://localhost/phpmyadmin
+4. Pilih menu Import.
+5. Impor file database/database.sql
+6. Buka http://localhost/EduPlay-Ceria/
+
+B. AKUN AWAL
+Admin:
+- Username: admin
+- Password: admin123
+
+Siswa demo:
+- Username: siswa
+- Password: siswa123
+
+C. JIKA DATABASE LAMA SUDAH ADA
+1. Buka database eduplay_ceria di phpMyAdmin.
+2. Pilih menu SQL atau Import.
+3. Jalankan database/migration/001_auth_siswa_admin.sql
+4. Tidak perlu menghapus data lama.
+
+D. ALUR PENGGUNA
+- Siswa dapat mendaftar melalui halaman login.
+- Setelah login, siswa dapat membuka materi, permainan, kuis, dan prestasi.
+- Nilai permainan disimpan berdasarkan akun siswa.
+- Admin login dengan memilih jenis akun Administrator.
+- Admin dapat menambah siswa maupun admin melalui menu Pengguna > Tambah Pengguna.
+
+E. CATATAN
+- Segera ganti password admin awal melalui menu Profil > Ganti Password.
+- Pastikan nama database pada config/database.php adalah eduplay_ceria.
+- Konfigurasi bawaan memakai user MySQL root tanpa password.

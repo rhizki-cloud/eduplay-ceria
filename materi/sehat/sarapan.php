@@ -1,0 +1,4 @@
+<?php $pageTitle='Sarapan Sehat';$activeNav='sehat';$showBack=true;$backUrl='materi/sehat/index.php';include __DIR__.'/../../includes/header.php';?>
+<div class="content-card"><h2>🍳 Manfaat Sarapan</h2><ul><li>Memberikan energi untuk beraktivitas.</li><li>Membantu lebih fokus saat belajar.</li><li>Mengurangi rasa lapar yang berlebihan.</li></ul><h3>Contoh menu sehat</h3><p>Nasi, telur, sayur, susu, buah, atau bubur ayam dengan porsi yang sesuai.</p></div>
+<div class="stack"><a class="big-btn blue" href="<?= e($backUrl) ?>">Kembali ke Daftar Materi</a></div>
+<?php include __DIR__.'/../../includes/footer.php';?>

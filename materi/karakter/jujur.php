@@ -1,0 +1,4 @@
+<?php $pageTitle='Jujur';$activeNav='karakter';$showBack=true;$backUrl='materi/karakter/index.php';include __DIR__.'/../../includes/header.php';?>
+<div class="content-card"><h2>🤝 Apa itu jujur?</h2><p>Jujur adalah berkata dan bertindak sesuai kenyataan atau kebenaran, tanpa berbohong.</p><h3>Manfaat bersikap jujur</h3><ul><li>Orang lain percaya kepada kita.</li><li>Hati menjadi tenang.</li><li>Memiliki banyak teman.</li><li>Menjadi pribadi yang bertanggung jawab.</li></ul><h3>Contoh</h3><p>Mengakui kesalahan, tidak mencontek, mengembalikan barang yang ditemukan, dan mengatakan yang sebenarnya kepada orang tua.</p></div>
+<div class="stack"><a class="big-btn blue" href="<?= e($backUrl) ?>">Kembali ke Daftar Materi</a></div>
+<?php include __DIR__.'/../../includes/footer.php';?>

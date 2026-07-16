@@ -1,0 +1,3 @@
+<?php $pageTitle='Kuis Aritmatika';$pageKicker='Hitung Cepat dan Tepat';$activeNav='permainan';$showBack=true;$backUrl='materi/numerasi/index.php';$pageScript='assets/js/permainan.js';include __DIR__.'/../includes/header.php';?>
+<p class="intro">Pilih jawaban yang benar. Ada 10 soal.</p><section class="game-panel" data-game="numerasi"><div class="progress"><span></span></div><div class="game-meta"><span data-meta></span><span>⭐</span></div><div class="question"></div><div class="answer-grid"></div><div class="result-box content-card"><h2>Hebat! Nilaimu</h2><div class="score" data-final>0</div><button class="btn" data-restart>Ulangi Permainan</button></div></section>
+<?php include __DIR__.'/../includes/footer.php';?>

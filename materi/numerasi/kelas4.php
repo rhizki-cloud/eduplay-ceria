@@ -1,0 +1,4 @@
+<?php $pageTitle='Numerasi Kelas 4';$activeNav='numerasi';$showBack=true;$backUrl='materi/numerasi/index.php';include __DIR__.'/../../includes/header.php';?>
+<div class="content-card"><h2>🔢 Bilangan Cacah hingga Jutaan</h2><p>Bilangan cacah digunakan untuk menyatakan jumlah benda. Contoh: jumlah buku di perpustakaan = 5.236 buku.</p><h3>Nilai tempat pada 234.567</h3><ul><li>2 = ratus ribu</li><li>3 = puluh ribu</li><li>4 = ribu</li><li>5 = ratus</li><li>6 = puluhan</li><li>7 = satuan</li></ul><h2>➕ Operasi Hitung</h2><p>Perpustakaan memiliki 235 buku dan mendapat tambahan 128 buku. Jadi, 235 + 128 = <strong>363 buku</strong>.</p><h2>📏 Pengukuran</h2><p>Panjang memakai cm atau meter, berat memakai gram atau kilogram, dan waktu memakai jam, menit, atau detik.</p></div>
+<div class="stack"><a class="big-btn blue" href="<?= e($backUrl) ?>">Kembali ke Daftar Materi</a></div>
+<?php include __DIR__.'/../../includes/footer.php';?>

@@ -1,0 +1,3 @@
+<?php
+require_once __DIR__.'/../../config/auth.php';require_once __DIR__.'/../../config/database.php';require_admin();$pdo=db();if(!$pdo)exit('Database belum terhubung.');
+$rows=$pdo->query('SELECT id,nama,username,role,created_at FROM users ORDER BY id')->fetchAll();header('Content-Type: text/csv; charset=utf-8');header('Content-Disposition: attachment; filename="pengguna-eduplay-'.date('Ymd-His').'.csv"');$out=fopen('php://output','w');fwrite($out,"\xEF\xBB\xBF");fputcsv($out,['ID','Nama','Username','Peran','Dibuat']);foreach($rows as $r)fputcsv($out,[$r['id'],$r['nama'],$r['username'],$r['role'],$r['created_at']]);fclose($out);exit;

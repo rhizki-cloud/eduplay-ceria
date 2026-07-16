@@ -1,0 +1,8 @@
+<?php
+require_once __DIR__.'/../../config/auth.php';require_once __DIR__.'/../../config/database.php';require_once __DIR__.'/../../config/helper.php';require_admin();
+$pdo=db();$user=current_user();$row=$user;
+if($pdo){$s=$pdo->prepare('SELECT id,nama,username,role,created_at FROM users WHERE id=?');$s->execute([(int)$user['id']]);$row=$s->fetch()?:$user;}
+$adminPageTitle='Profil Admin';$adminPageDescription='Kelola identitas dan keamanan akun administrator.';$adminActive='';include __DIR__.'/../../includes/admin_header.php';
+?>
+<div class="admin-columns"><section class="admin-card"><div class="admin-card-head"><div><h2><?=e($row['nama']??'Administrator')?></h2><p>@<?=e($row['username']??'admin')?></p></div><span class="role-badge admin">Administrator</span></div><div class="content-card sky"><p><strong>ID akun:</strong> <?=e($row['id']??'-')?></p><p><strong>Dibuat:</strong> <?=e(format_date_id($row['created_at']??null))?></p><p><strong>Akses:</strong> Panel admin dan tampilan siswa</p></div><div class="admin-form-actions"><a class="btn" href="<?=url('admin/profile/edit.php')?>">Edit Profil</a><a class="btn ghost" href="<?=url('admin/profile/password.php')?>">Ganti Password</a></div></section><section class="admin-card"><div class="admin-card-head"><div><h2>Keamanan Akun</h2><p>Gunakan password yang berbeda dari akun lain.</p></div></div><div class="admin-form-note">Akun admin dapat membuat administrator baru dan mengelola seluruh pengguna. Gunakan password yang kuat dan simpan kredensial dengan aman.</div></section></div>
+<?php include __DIR__.'/../../includes/admin_footer.php'; ?>

@@ -1,0 +1,4 @@
+<?php $pageTitle='Kebiasaan Sehat';$activeNav='sehat';$showBack=true;$backUrl='materi/sehat/index.php';include __DIR__.'/../../includes/header.php';?>
+<div class="content-card"><h2>🌞 Rutinitas Sehat</h2><ol><li>Bangun pagi dan merapikan tempat tidur.</li><li>Sarapan dengan menu bergizi.</li><li>Mencuci tangan sebelum makan.</li><li>Minum air putih cukup.</li><li>Bergerak aktif atau berolahraga.</li><li>Tidur cukup dan teratur.</li></ol></div>
+<div class="stack"><a class="big-btn blue" href="<?= e($backUrl) ?>">Kembali ke Daftar Materi</a></div>
+<?php include __DIR__.'/../../includes/footer.php';?>

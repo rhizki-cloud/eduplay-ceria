@@ -1,0 +1,4 @@
+<?php $pageTitle='Olahraga';$activeNav='sehat';$showBack=true;$backUrl='materi/sehat/index.php';include __DIR__.'/../../includes/header.php';?>
+<div class="content-card"><h2>🏃 Tubuh Aktif dan Kuat</h2><p>Olahraga teratur membuat tubuh bugar dan membantu kita belajar serta bermain dengan semangat.</p><h3>Contoh olahraga</h3><div class="chip-row"><span class="chip">Berjalan kaki</span><span class="chip">Berlari</span><span class="chip">Bersepeda</span><span class="chip">Senam</span></div></div>
+<div class="stack"><a class="big-btn blue" href="<?= e($backUrl) ?>">Kembali ke Daftar Materi</a></div>
+<?php include __DIR__.'/../../includes/footer.php';?>

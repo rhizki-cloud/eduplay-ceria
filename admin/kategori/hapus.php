@@ -1,0 +1,2 @@
+<?php
+require_once __DIR__.'/../../config/auth.php';require_once __DIR__.'/../../config/database.php';require_once __DIR__.'/../../config/helper.php';require_admin();if($_SERVER['REQUEST_METHOD']!=='POST'){http_response_code(405);exit;};verify_csrf();if($pdo=db()){$s=$pdo->prepare('DELETE FROM kategori_materi WHERE id=?');$s->execute([(int)($_POST['id']??0)]);flash('success','Kategori berhasil dihapus.');}redirect('admin/kategori/index.php');

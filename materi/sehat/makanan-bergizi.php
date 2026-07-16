@@ -1,0 +1,4 @@
+<?php $pageTitle='Makanan Bergizi';$activeNav='sehat';$showBack=true;$backUrl='materi/sehat/index.php';include __DIR__.'/../../includes/header.php';?>
+<div class="content-card"><h2>🥗 Makanan Bergizi</h2><p>Makanan bergizi mengandung zat yang dibutuhkan tubuh agar tetap sehat.</p><ul><li><strong>Karbohidrat:</strong> nasi, kentang, jagung, singkong.</li><li><strong>Protein:</strong> ikan, telur, ayam, tahu, tempe.</li><li><strong>Vitamin dan mineral:</strong> sayur serta buah.</li><li><strong>Pelengkap:</strong> susu sesuai kebutuhan.</li></ul></div>
+<div class="stack"><a class="big-btn blue" href="<?= e($backUrl) ?>">Kembali ke Daftar Materi</a></div>
+<?php include __DIR__.'/../../includes/footer.php';?>

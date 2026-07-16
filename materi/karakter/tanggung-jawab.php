@@ -1,0 +1,4 @@
+<?php $pageTitle='Tanggung Jawab';$activeNav='karakter';$showBack=true;$backUrl='materi/karakter/index.php';include __DIR__.'/../../includes/header.php';?>
+<div class="content-card"><h2>🌟 Apa itu tanggung jawab?</h2><p>Tanggung jawab adalah sikap melaksanakan tugas dan kewajiban dengan sebaik-baiknya serta berani menerima akibat dari setiap tindakan.</p><h3>Contoh sikap</h3><ul><li>Merapikan tempat tidur dan merawat barang sendiri.</li><li>Mengerjakan serta mengumpulkan tugas tepat waktu.</li><li>Menjaga kebersihan kelas dan lingkungan.</li><li>Menjalankan piket sesuai jadwal.</li></ul><h3>Manfaat</h3><p>Menjadi mandiri, dapat dipercaya, memiliki kebiasaan baik, dan dapat diandalkan.</p></div>
+<div class="stack"><a class="big-btn blue" href="<?= e($backUrl) ?>">Kembali ke Daftar Materi</a></div>
+<?php include __DIR__.'/../../includes/footer.php';?>

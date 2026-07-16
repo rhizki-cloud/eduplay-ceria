@@ -1,0 +1,4 @@
+<?php $pageTitle='Numerasi Kelas 6';$activeNav='numerasi';$showBack=true;$backUrl='materi/numerasi/index.php';include __DIR__.'/../../includes/header.php';?>
+<div class="content-card"><h2>➗ Operasi Campuran</h2><p>Operasi campuran dikerjakan sesuai urutan. Contoh: 8 − 2¼ = 5¾.</p><h2>🗺️ Perbandingan dan Skala</h2><p>Skala 1 : 100 berarti 1 cm pada gambar sama dengan 100 cm sebenarnya.</p><h2>🧠 Langkah Soal HOTS</h2><ol><li>Memahami informasi.</li><li>Menentukan yang ditanyakan.</li><li>Memilih operasi hitung.</li><li>Menarik kesimpulan.</li></ol><p><strong>Contoh:</strong> sekolah membeli 48 kursi. Setiap kelas mendapat 6 kursi. Jadi 48 ÷ 6 = <strong>8 kelas</strong>.</p></div>
+<div class="stack"><a class="big-btn blue" href="<?= e($backUrl) ?>">Kembali ke Daftar Materi</a></div>
+<?php include __DIR__.'/../../includes/footer.php';?>
